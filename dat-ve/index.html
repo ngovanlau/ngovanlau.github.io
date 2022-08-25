@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandering Bus- Những chuyến xe lang thang</title>
+    <link rel="short icon" href="assets/images/Logo.jpg">
+    <meta name="keywords" content="xe khách,đặt vé xe khách, dat ve xe khach, wandering bus">
+    <meta http-equiv="refresh" content="3000">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header class="flex space-bet">
+        <div class="flex">
+            <img src="assets/images/Logo.jpg" alt="Lo go">
+            <h1 class="name animate__animated animate__flip">Wandering Bus</h1>
+        </div>
+
+        <nav>
+            <ul class="flex">
+                <li><a href="/trang-chu/index.html">Trang chủ</a></li>
+                <li><a href="/gioi-thieu/index.html">Giới thiệu</a></li>
+                <li><a href="/tien-ich/index.html">Tiện ích</a></li>
+                <li><a href="/dat-ve/index.html">Đặt vé</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex"> 
+            <div class="register">
+                <input type="button" name="Đăng kí" value="Đăng kí">
+                <div id="register_click" class="reg_log_backgr">
+                    <div class="reg_log_item"> 
+                        <div>
+                            <div class="exit"><i class="fa-regular fa-circle-xmark"></i></div>
+                            <div class="reg_log_item_1 flex">
+                                <img src="assets/images/Logo.jpg" alt="Logo">
+                                <h1>Wandering Bus</h1>
+                            </div>
+                            <div class="reg_log_item_2"><h3>Đăng kí</h3></div>
+                            <div class="reg_log_item_3 flex column">
+                                <div class="flex column">
+                                    <div>Nhập tên đăng nhập:</div>
+                                    <div><input id="reg_username" type="text" placeholder="Nhập tên đăng nhập"></div>
+                                </div>
+                                <div class="flex column">
+                                    <div>Nhập mật khẩu:</div>
+                                    <div><input id="reg_pass1" type="password" placeholder="Nhập mật khẩu"></div>
+                                </div> 
+                                <div class="flex column">
+                                    <div>Nhập lại mật khẩu:</div>
+                                    <div><input id="reg_pass2" type="password" placeholder="Nhập lại mật khẩu"></div>
+                                </div>
+                                <div class="reg_log_item_3_button flex">
+                                    <div><input type="button" value="Đăng kí" onclick="checkPass1()"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login">
+                <input type="button" name="Đăng nhập" value="Đăng nhập">
+                <div id="login_click" class="reg_log_backgr">
+                    <div class="reg_log_item">
+                        <div>
+                            <div class="exit"><i class="fa-regular fa-circle-xmark"></i></div>
+                            <div class="reg_log_item_1 flex">
+                                <img src="assets/images/Logo.jpg" alt="Logo">
+                                <h1>Wandering Bus</h1>
+                            </div>
+                            <div class="reg_log_item_2"><h3>Đăng nhập</h3></div>
+                            <div class="reg_log_item_3 flex column">
+                                <div class="flex column">
+                                    <div>Nhập tên đăng nhập:</div>
+                                    <div><input id="log_username" type="text" placeholder="Nhập tên đăng nhập"></div>
+                                </div>
+                                <div class="flex column">
+                                    <div>Nhập mật khẩu:</div>
+                                    <div><input id="log_pass1" type="password" placeholder="Nhập mật khẩu"></div>
+                                </div> 
+                                <div class="reg_log_item_3_button flex">
+                                    <div><input type="button" value="Đăng nhập" onclick="checkPass2()"></div>
+                                </div>
+                                <div class="reg_log_item_4">
+                                    <div>
+                                        <hr>
+                                        <div>Hoặc đăng nhập bằng</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div>
+                                            <a href="javascript:;">
+                                                <img src="assets/images/Google__G__Logo.svg.png" alt="Google">
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:;">
+                                                <img src="assets/images/fb_icon_325x325.png" alt="Facebook">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-user click_user"></i>
+                <ul class="user">
+                    <li><a href="javascript:;">Thông tin cá nhân</a></li>
+                    <li><a href="javascript:;">Vé đã đặt</a></li>
+                    <li><a href="javascript:;">Tin nhắn</a></li>
+                    <li><a href="javascript:;">Cài đặt</a></li>
+                    <li><a href="javascript:;">Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+    </header> 
+
+    <div id="nav" class="flex space-bet">
+        <div class="slide_bar_icon">
+            <div class="icon"><i class="fa-solid fa-bars"></i></div>
+            <div class="slide_bar">
+                <ul class="flex column">
+                    <li><div class="slide_bar_exit"><i class="fa-regular fa-circle-xmark"></i></div></li>
+                    <li>
+                        <a href="/trang-chu/index.html">Trang chủ</a>
+                        <ul>
+                            <li><a href="#intro">Giới thiệu</a></li>
+                            <li><a href="#route">Tuyến đường phổ biến</a></li>
+                            <li><a href="#endow">Ưu đãi</a></li>
+                            <li><a href="#sta">Nền tảng kết nối</a></li>
+                            <li><a href="#bus_sta">Bến xe khách</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/gioi-thieu/index.html">Giới thiệu</a>
+                        <ul>
+                            <li><a href="#itr">Giới thiệu</a></li>
+                            <li><a href="#his">Lịch sử hình thành</a></li>
+                            <li><a href="#bk">Hãy đặt vé</a></li>
+                            <li><a href="#fie">Lĩnh vực hoạt động</a></li>
+                            <li><a href="#img">Hình ảnh hoạt động</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/tien-ich/index.html">Tiện ích</a>
+                        <ul>
+                            <li><a href="#new">Tin tức</a></li>
+                            <li><a href="#rt">Các tuyến đường</a></li>
+                            <li><a href="#rev">Đánh giá</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/dat-ve/index.html">Đặt vé</a>
+                        <ul>
+                            <li><a href="#travel">Các tuyết du lịch hot</a></li>
+                            <li><a href="#car">Da dạng dòng xe</a></li>
+                            <li><a href="#book">Đặt vé tại Wandering Bus</a></li>
+                            <li><a href="#ques">Câu hỏi thường gặp</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="search flex">
+            <div>
+                <input type="text" placeholder="Tìm kiếm">
+                <ul class="search_box"></ul>
+            </div>
+            <div class="flex"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+    </div>
+
+    <section>
+        <section>
+            <div>
+                <div class="bg"><img src="/dat-ve/assets/images/1_maxresdefault.jpg" alt="">
+                    <div class="ticket">
+                        <div class="ticket_items flex">
+                            <div class="ticket_item">
+                                <div>
+                                    <div><img src="assets/images/hon-600-doi-tac-van-chuyen-cho-thue-xe-300x300.png" alt="ticket"></div>
+                                    <div>Hơn 600 đối tác vận chuyển hợp tác</div>
+                                    <div>Đáp ứng đa dạng dòng xe theo nhu cầu của khách</div>
+                                </div>
+                            </div>
+                            <div class="ticket_item">
+                                <div>
+                                    <div><img src="assets/images/ho-tro-tu-van-khach-hang-thue-xe-247-300x300.png" alt="ticket"></div>
+                                    <div>Hỗ trợ tư vấn khách hàng tận tình</div>
+                                    <div>Luôn túc trực tư vấn 24/7, hỗ trợ cho khách hàng tốt nhất</div>
+                                </div>
+                            </div>
+                            <div class="ticket_item">
+                                <div>
+                                    <div><img src="assets/images/tiet-kiem-thoi-gian-ngan-sach-300x300.png" alt="ticket"></div>
+                                    <div>Tiết kiệm thời gian – ngân sách</div>
+                                    <div>Tư vấn dòng xe phù hợp nhất với ngân sách và nhu cầu khách hàng</div>
+                                </div>
+                            </div>
+                            <div class="ticket_item">
+                                <div>
+                                    <div><img src="assets/images/da-dang-hinh-thuc-thanh-toan-khi-thue-xe-300x300.png" alt="ticket"></div>
+                                    <div>Hỗ trợ thanh toán nhiều kênh đa dạng</div>
+                                    <div>Khách hàng có thể chọn thanh toán nhiều hình thức khác nhau sao cho tiện nhất</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ticket_book">
+                            <div>Đặt vé xe ngay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="travel" class="container">
+                <div><h2>Các tuyến du lịch hot</h2></div>
+                <div class="cards flex wrap">
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/Sapa.jpeg" alt=""></div>
+                            <div><h3>SaPa</h3></div>
+                            <div>Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/gia-ve-vao-khu-du-lich-trang-an.jpg" alt=""></div>
+                            <div><h3>Tràng An - Ninh Bình</h3></div>
+                            <div>Xe Limousine 9 -11 chỗ <br> Xe Limousine 9-11-18 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/thue-xe-du-lich-di-vung-tau.jpg" alt=""></div>
+                            <div><h3>Vũng Tàu</h3></div>
+                            <div>Xe ghế ngồi 7-16 chỗ <br> Xe Limousine 9 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/thue-xe-du-lich-di-da-lat.png" alt=""></div>
+                            <div><h3>Đà Lạt</h3></div>
+                            <div>Xe Giường nằm 40 chỗ <br> Xe Limousine 9 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/Thue-xe-di-Phan-Thiet-Mui-Ne.jpg" alt=""></div>
+                            <div><h3>Phan Thiết - Mũi Né</h3></div>
+                            <div>Xe ghế ngồi 7-16 chỗ <br> Xe Limousine 9 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/Thue-xe-di-ha-long-e1652349856476.jpg" alt=""></div>
+                            <div><h3>Hạ Long</h3></div>
+                            <div>Xe Limousine 9 chỗ <br> Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/da-nang-resize-1.jpg" alt=""></div>
+                            <div><h3>Huế - Đà Nẵng</h3></div>
+                            <div>Xe ghế ngồi 7-16 chỗ <br> Xe Limousine 9 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/cua-lo.jpg" alt=""></div>
+                            <div><h3>Cửa Lò</h3></div>
+                            <div>Giường nằm 38 chỗ <br> Cabin 20-22 phòng</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/quang-binh.jpg" alt=""></div>
+                            <div><h3>Quảng Bình</h3></div>
+                            <div>Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/nha-trang.jpg" alt=""></div>
+                            <div><h3>Nha Trang</h3></div>
+                            <div>Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/can-tho.jpg" alt=""></div>
+                            <div><h3>Cần Thơ</h3></div>
+                            <div>Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                    <div class="card_item">
+                        <div>
+                            <div><img src="assets/images/ha-noi.jpg" alt=""></div>
+                            <div><h3>Hà Nội</h3></div>
+                            <div>Xe ghế ngồi 16 chỗ</div>
+                            <div>Giá: 300.000 VNĐ/ 1 người</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="car" class="container">
+                <div><h2>Da dạng dòng xe</h2></div>
+                <div class="car_items flex">
+                    <div class="slider">
+                        <i class="fa-solid fa-circle-chevron-left slider-prev"></i>
+                        <div class="slider-swrapper">
+                            <div class="slider-main">
+                                <div class="slider-item">
+                                    <img src="assets/images/Limousine-9-cho.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/Xe-Limousine-11-cho-682x1024.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/Xe-Limousine-15-cho-2-1024x683.jpg" alt="Ảnh minh họa">
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-chevron-right slider-next"></i>
+                        <div>
+                            <h3>XE LIMOUSINE VIP</h3>
+                            <div>9-11-15-18 chỗ</div>
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <i class="fa-solid fa-circle-chevron-left slider-prev"></i>
+                        <div class="slider-swrapper">
+                            <div class="slider-main">
+                                <div class="slider-item">
+                                    <img src="assets/images/Sao-Nghệ-Limousine-2-min.png" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/xe-giuong-phong-limousine-cho-thue-xe-vexere.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/xe-giuong-phong-limousine-cho-thue-xe-du-lich-vexere-2.jpg" alt="Ảnh minh họa">
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-chevron-right slider-next"></i>
+                        <div>
+                            <h3>XE LIMOUSINE CABIN</h3>
+                            <div>20-21 phòng</div>
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <i class="fa-solid fa-circle-chevron-left slider-prev"></i>
+                        <div class="slider-swrapper">
+                            <div class="slider-main">
+                                <div class="slider-item">
+                                    <img src="assets/images/thue-xe-du-lich-xe-giuong-nam-2.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/thue-xe-du-lich-xe-giuong-nam-1-1024x648.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/xe-giuong-nam-cho-thue-xe-vexere.jpg" alt="Ảnh minh họa">
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-chevron-right slider-next"></i>
+                        <div>
+                            <h3>XE GIƯỜNG NẰM</h3>
+                            <div>32-38-40-44 giường</div>
+                        </div>
+                    </div>
+                    <div class="slider">
+                        <i class="fa-solid fa-circle-chevron-left slider-prev"></i>
+                        <div class="slider-swrapper">
+                            <div class="slider-main">
+                                <div class="slider-item">
+                                    <img src="assets/images/xe-ghe-ngoi-16-cho.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/thue-xe-du-lich-xe-ghe-ngoi-2.jpg" alt="Ảnh minh họa">
+                                </div>
+                                <div class="slider-item">
+                                    <img src="assets/images/thue-xe-du-lich-xe-ghe-ngoi-1024x554.jpg" alt="Ảnh minh họa">
+                                </div>
+                            </div>
+                        </div>
+                        <i class="fa-solid fa-circle-chevron-right slider-next"></i>
+                        <div>
+                            <h3>XE GHẾ NGỒI</h3>
+                            <div>7-16-29-35-45 chỗ</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="book" class="container">
+                <div><h2>Đặt vé tại Wandering Bus</h2></div>
+                <div class="book flex column">
+                    <div class="book_item_1 flex">
+                        <div><input type="radio" name="sex"> Anh</div>
+                        <div><input type="radio" name="sex"> Chị </div>
+                    </div>
+                    <div class="book_item_2"><input type="text" placeholder="Họ và Tên"></div>
+                    <div class="book_item_3 flex space-bet">
+                        <div><input type="text" placeholder="Số điện thoại"></div>
+                        <div><input type="email" placeholder="Email"></div>
+                    </div>
+                    <div class="book_item_4 flex space-bet">
+                        <div><input type="number" placeholder="Số lượng khách" min="1"></div>
+                        <div>
+                            <select name="dong-xe">
+                                <option value="Limousine 9 chỗ">Limousine 9 chỗ</option>
+                                <option value="Limousine 11 chỗ">Limousine 11 chỗ</option>
+                                <option value="Ghế ngồi 7 chỗ">Ghế ngồi 7 chỗ</option>
+                                <option value="Ghế ngồi 16 chỗ">Ghế ngồi 16 chỗ</option>
+                                <option value="Ghế ngồi 29 chỗ">Ghế ngồi 29 chỗ</option>
+                                <option value="Ghế ngồi 35 chỗ">Ghế ngồi 35 chỗ</option>
+                                <option value="Ghế ngồi 45 chỗ">Ghế ngồi 45 chỗ</option>
+                                <option value="Cabin 20 phòng VIP">Cabin 20 phòng VIP</option>
+                                <option value="Giường nằm">Giường nằm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="book_item_5 flex space-bet">
+                        <div>
+                            <div>Ngày đi</div>
+                            <div><input type="date" value></div>
+                        </div>
+                        <div>
+                            <div>Giờ đi</div>
+                            <div><input type="text" placeholder="7:00"></div>
+                        </div>
+                    </div>
+                    <div class="book_item_6 flex space-bet">
+                        <div><input type="text" placeholder="Địa chỉ điểm đón"></div>
+                        <div><input type="text" placeholder="Địa chỉ điểm đến"></div>   
+                    </div>
+                    <div class="book_item_7 flex">
+                        <div><input type="radio" name="huong-di">Một chiều</div>
+                        <div><input type="radio" name="huong-di">Khứ hồi</div>
+                    </div>
+                    <div class="book_item_8"><input type="text" placeholder="Các lưu ý khác giúp Wandering Bus tư vấn cho bạn tốt hơn"></div>
+                    <div class="book_item_9">Đặt vé</div>
+                    <div class="book_item_10">
+                        <div>Quý khách có nhu cầu gấp vui lòng liên hệ:</div>
+                        <div><i class="fa-solid fa-phone"></i> 123456789</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="ques" class="container">
+                <div><h2>Câu hỏi thường gặp</h2></div>
+                <div class="questions">
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tôi muốn lấy hóa đơn Giá trị Gia tăng (VAT) có được không?</div>
+                        <div>Chúng tôi có hỗ trợ xuất hóa đơn VAT cho khách đặt xe thông qua hệ thống WanderingBus.com</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tôi có phải chi trả phí cầu đường, bến bãi khi thuê xe tại Wandering Bus?</div>
+                        <div>Chi phí cầu đường bến bãi do đơn vị vận tải chịu trách nhiệm chi trả và đã tính vào phí dịch vụ thông báo cho quý khách.</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tôi có phải chi trả thêm phí giữ xe quá giờ hợp đồng?</div>
+                        <div>Tùy vào từng nhà cung cấp, phi giữ xe quá giờ hoặc phí vượt số km thỏa thuận sẽ được tính khác nhau. Thông thường, mức phí này dao động trong khoảng 10.000 – 17.000Đ/km và 100.000 – 250.000Đ/giờ tùy từng dòng xe.</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tôi muốn đổi giờ khởi hành có được không?</div>
+                        <div>Trường hợp quý khách muốn dời lịch khởi hành, hãy liên hệ với nhân viên để thỏa thuận giờ khởi hành khác. Chúng tôi sẽ kiểm tra tình trạng xe trống, tình trạng tài xế có sẵn trước khi phản hồi lại quý khách.</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tôi có thể đặt cọc trước bao nhiêu?</div>
+                        <div>Chúng tôi hỗ trợ khách hàng đặt cọc tối thiểu 30% giá trị hợp đồng.</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Tạo sao tôi phải chuyển khoản cho Wandering Bus?</div>
+                        <div>Hiện tại WanderingBus.com là hệ thống bán vé xe khách lớn nhất trên thị trường. Với uy tín và trách nhiệm cao nhất trên từng hợp đồng. Chúng tôi luôn đảm bảo quyền lợi cho khách hàng của mình. Thanh toán thông qua WaderingBus.com, quý khách sẽ nhận được xác nhận thanh toán qua tin nhắn, email khi thanh toán thành công.</div>
+                    </div>
+                    <div class="question">
+                        <div><i class="fa-solid fa-angle-up"></i> Wandering Bus có hỗ trợ thuê xe lâu dài và thuê xe số lượng lớn không?</div>
+                        <div>
+                            Với số lượng đối tác hiện tại, chúng tôi có thể hỗ trợ hầu hết hình thức thuê xe, từ số lượng nhỏ đến số lượng lớn, ngắn ngày đến dài ngày,… với giá cả phải chăng nhất.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="icons">
+                <div><a href="javascript:;"><i class="fa-solid fa-phone"></i>Liên hệ</a></div>
+                <div><a href="javascript:;"><i class="fa-brands fa-facebook"></i>FaceBook</a></div>
+                <div><a href="javascript:;"><i class="fa-solid fa-bus-simple"></i>Tìm chuyến</a></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="go_to_top">
+                <div><i class="fa-solid fa-angles-up"></i></div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div><hr></div>
+            <div>
+                <ul class="flex space-bet ">
+                    <li>
+                        <h4>Về chúng tối</h4>
+                        <ul>
+                            <li><a href="#">Phần mềm đại lý</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Tuyển dụng</a></li>
+                            <li><a href="#">Tin tức</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Hỗ trợ</h4>
+                        <ul>
+                            <li><a href="#">Hướng dẫn thanh toán</a></li>
+                            <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                            <li><a href="#">Chính sách và quy trình giải quyết <br> tranh chấp, khiếu nại</a></li>
+                            <li><a href="#">Câu hỏi thường gặp</a></li>
+                            <li><a href="#">Tra cứu đơn hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Chứng nhận</h4>
+                        <ul>
+                            <li><a href="#"><img src="assets/images/certificate0.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/certificate1.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/dangkybocongthuong.png" alt="Ảnh minh họa"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Tải ứng dụng Wadering Bus</h4>
+                        <ul>
+                            <li><a href="#"><img src="assets/images/AP-icon.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/GP-icon.png" alt="Ảnh minh họa"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>Công ty Lữ hành Wandering Bus</div>
+            <div>Địa chỉ đăng ký kinh doanh: Nguyễn Kiệm, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</div>
+            <div>Địa chỉ: Nguyễn Kiệm, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</div>
+            <div>Giấy chứng nhận ĐKKD số 0123456789 do Sở KH và ĐT TP. Hồ Chí Minh cấp lần đầu ngày 22/2/2022</div>
+            <div>Bản quyền &copy; 2022 thuộc về Wandering Bus</div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>

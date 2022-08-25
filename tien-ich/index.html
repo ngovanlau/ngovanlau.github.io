@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandering Bus- Những chuyến xe lang thang</title>
+    <link rel="short icon" href="assets/images/Logo.jpg">
+    <meta name="keywords" content="xe khách,đặt vé xe khách, dat ve xe khach, wandering bus">
+    <meta http-equiv="refresh" content="3000">
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+
+<body>
+    <header class="flex space-bet">
+        <div class="flex">
+            <img src="assets/images/Logo.jpg" alt="Lo go">
+            <h1 class="name animate__animated animate__flip">Wandering Bus</h1>
+        </div>
+
+        <nav>
+            <ul class="flex">
+                <li><a href="/trang-chu/index.html">Trang chủ</a></li>
+                <li><a href="/gioi-thieu/index.html">Giới thiệu</a></li>
+                <li><a href="/tien-ich/index.html">Tiện ích</a></li>
+                <li><a href="/dat-ve/index.html">Đặt vé</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex"> 
+            <div class="register">
+                <input type="button" name="Đăng kí" value="Đăng kí">
+                <div id="register_click" class="reg_log_backgr">
+                    <div class="reg_log_item"> 
+                        <div>
+                            <div class="exit"><i class="fa-regular fa-circle-xmark"></i></div>
+                            <div class="reg_log_item_1 flex">
+                                <img src="assets/images/Logo.jpg" alt="Logo">
+                                <h1>Wandering Bus</h1>
+                            </div>
+                            <div class="reg_log_item_2"><h3>Đăng kí</h3></div>
+                            <div class="reg_log_item_3 flex column">
+                                <div class="flex column">
+                                    <div>Nhập tên đăng nhập:</div>
+                                    <div><input id="reg_username" type="text" placeholder="Nhập tên đăng nhập"></div>
+                                </div>
+                                <div class="flex column">
+                                    <div>Nhập mật khẩu:</div>
+                                    <div><input id="reg_pass1" type="password" placeholder="Nhập mật khẩu"></div>
+                                </div> 
+                                <div class="flex column">
+                                    <div>Nhập lại mật khẩu:</div>
+                                    <div><input id="reg_pass2" type="password" placeholder="Nhập lại mật khẩu"></div>
+                                </div>
+                                <div class="reg_log_item_3_button flex">
+                                    <div><input type="button" value="Đăng kí" onclick="checkPass1()"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="login">
+                <input type="button" name="Đăng nhập" value="Đăng nhập">
+                <div id="login_click" class="reg_log_backgr">
+                    <div class="reg_log_item">
+                        <div>
+                            <div class="exit"><i class="fa-regular fa-circle-xmark"></i></div>
+                            <div class="reg_log_item_1 flex">
+                                <img src="assets/images/Logo.jpg" alt="Logo">
+                                <h1>Wandering Bus</h1>
+                            </div>
+                            <div class="reg_log_item_2"><h3>Đăng nhập</h3></div>
+                            <div class="reg_log_item_3 flex column">
+                                <div class="flex column">
+                                    <div>Nhập tên đăng nhập:</div>
+                                    <div><input id="log_username" type="text" placeholder="Nhập tên đăng nhập"></div>
+                                </div>
+                                <div class="flex column">
+                                    <div>Nhập mật khẩu:</div>
+                                    <div><input id="log_pass1" type="password" placeholder="Nhập mật khẩu"></div>
+                                </div> 
+                                <div class="reg_log_item_3_button flex">
+                                    <div><input type="button" value="Đăng nhập" onclick="checkPass2()"></div>
+                                </div>
+                                <div class="reg_log_item_4">
+                                    <div>
+                                        <hr>
+                                        <div>Hoặc đăng nhập bằng</div>
+                                    </div>
+                                    <div class="flex">
+                                        <div>
+                                            <a href="javascript:;">
+                                                <img src="assets/images/Google__G__Logo.svg.png" alt="Google">
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <a href="javascript:;">
+                                                <img src="assets/images/fb_icon_325x325.png" alt="Facebook">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-circle-user click_user"></i>
+                <ul class="user">
+                    <li><a href="javascript:;">Thông tin cá nhân</a></li>
+                    <li><a href="javascript:;">Vé đã đặt</a></li>
+                    <li><a href="javascript:;">Tin nhắn</a></li>
+                    <li><a href="javascript:;">Cài đặt</a></li>
+                    <li><a href="javascript:;">Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+    </header> 
+
+    <div id="nav" class="flex space-bet">
+        <div class="slide_bar_icon">
+            <div class="icon"><i class="fa-solid fa-bars"></i></div>
+            <div class="slide_bar">
+                <ul class="flex column">
+                    <li><div class="slide_bar_exit"><i class="fa-regular fa-circle-xmark"></i></div></li>
+                    <li>
+                        <a href="/trang-chu/index.html">Trang chủ</a>
+                        <ul>
+                            <li><a href="#intro">Giới thiệu</a></li>
+                            <li><a href="#route">Tuyến đường phổ biến</a></li>
+                            <li><a href="#endow">Ưu đãi</a></li>
+                            <li><a href="#sta">Nền tảng kết nối</a></li>
+                            <li><a href="#bus_sta">Bến xe khách</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/gioi-thieu/index.html">Giới thiệu</a>
+                        <ul>
+                            <li><a href="#itr">Giới thiệu</a></li>
+                            <li><a href="#his">Lịch sử hình thành</a></li>
+                            <li><a href="#bk">Hãy đặt vé</a></li>
+                            <li><a href="#fie">Lĩnh vực hoạt động</a></li>
+                            <li><a href="#img">Hình ảnh hoạt động</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/tien-ich/index.html">Tiện ích</a>
+                        <ul>
+                            <li><a href="#new">Tin tức</a></li>
+                            <li><a href="#rt">Các tuyến đường</a></li>
+                            <li><a href="#rev">Đánh giá</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/dat-ve/index.html">Đặt vé</a>
+                        <ul>
+                            <li><a href="#travel">Các tuyết du lịch hot</a></li>
+                            <li><a href="#car">Da dạng dòng xe</a></li>
+                            <li><a href="#book">Đặt vé tại Wandering Bus</a></li>
+                            <li><a href="#ques">Câu hỏi thường gặp</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="search flex">
+            <div>
+                <input type="text" placeholder="Tìm kiếm">
+                <ul class="search_box"></ul>
+            </div>
+            <div class="flex"><i class="fa-solid fa-magnifying-glass"></i></div>
+        </div>
+    </div>
+
+    <section>
+        <section>
+            <div id="news" class="container">
+                <div><h2>Tin tức</h2></div>
+                <div class="news_events flex wrap">
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc1.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc2.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc3.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc4.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc5.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc6.png" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc7.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc8.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tin9.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc10.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc11.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news_events_item">
+                        <div>
+                            <div>
+                                <div><img src="/tien-ich/assets/images/tintuc12.jpg" alt="Ảnh minh họa"></div>
+                            </div>
+                            <div>
+                                <div><h3>Đảng Wandering Bus tham gia nghiên cứu, học tập, quán triệt, tuyên truyền v...</h3></div>
+                                <div>Sáng ngày 16 tháng 8 năm 2022, Thành ủy Hà Nội tổ chức Hội nghị trực tuyến nghiên cứu, học tập, quán triệt, tuyên truyền và triển khai...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="next flex wrap">
+                    <div style="background-color: #e68900; color: #f0f0d0" class="flex">1</div>
+                    <div class="flex">2</div>
+                    <div class="flex">...</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="rt" class="container">
+                <div><h2>Các tuyến đường</h2></div>
+                <div class="routes">
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/dalat.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Đà Lạt</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/nhatrang.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Nha Trang</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/phanthiet.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Phan Thiết</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/buonmathuot.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Buôn Ma Thuột</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/saigon.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Nha Trang - Sài Gòn</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/vungtau.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Vũng Tàu</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/haiphong.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Hà Nội - Hải Phòng</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/phanrang.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Sài Gòn - Phan Rang</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                    <div class="route_item flex">
+                        <div><img src="/tien-ich/assets/images/bavi.jpg" alt="ảnh minh họa"></div>
+                        <div>
+                            <div class="flex">
+                                <div>Tuyến đường:</div>
+                                <div>Hà Nội - Ba Vì</div> 
+                            </div>
+                            <div class="flex">
+                                <div>Loại xe:</div>
+                                <div>Xe ghế ngồi 16 chỗ</div>
+                            </div>
+                            <div class="flex">
+                                <div>Đánh giá:</div>
+                                <div class="flex">
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                    <div><i class="fa-solid fa-star"></i></div>
+                                </div>
+                            </div>
+                            <div class="book">Đặt ngay</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div id="rev" class="review">
+                <div>
+                    <div><h2>Đánh giá</h2></div>
+                    <div>999 đánh giá cho <span>Wandering Bus</span></div>
+                    <div class="flex swrap">
+                        <div>5</div>
+                        <div>/5</div>
+                        <div class="flex swrap">
+                            <div><i class="fa-solid fa-star"></i></div>
+                            <div><i class="fa-solid fa-star"></i></div>
+                            <div><i class="fa-solid fa-star"></i></div>
+                            <div><i class="fa-solid fa-star"></i></div>
+                            <div><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="review_items">
+                    <div class="review_item flex swrap">
+                        <div><img src="/tien-ich/assets/images/user-avata-default.webp" alt="Icon"></div>
+                        <div>
+                            <div class="flex swrap">
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div>Ngô Văn Lâu</div>
+                            <div>23/8/2022</div>
+                            <div>Dịch vụ tuyệt vời. Đặt vé nhanh chóng và nhân viên phục vụ nhiệt tình.</div>
+                        </div>
+                    </div>
+                    <div class="review_item flex swrap">
+                        <div><img src="/tien-ich/assets/images/user-avata-default.webp" alt="Icon"></div>
+                        <div>
+                            <div class="flex swrap">
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div>Ngô Văn Lâu</div>
+                            <div>23/8/2022</div>
+                            <div>Dịch vụ tuyệt vời. Đặt vé nhanh chóng và nhân viên phục vụ nhiệt tình.</div>
+                        </div>
+                    </div>
+                    <div class="review_item flex swrap">
+                        <div><img src="/tien-ich/assets/images/user-avata-default.webp" alt="Icon"></div>
+                        <div>
+                            <div class="flex swrap">
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div>Ngô Văn Lâu</div>
+                            <div>23/8/2022</div>
+                            <div>Dịch vụ tuyệt vời. Đặt vé nhanh chóng và nhân viên phục vụ nhiệt tình.</div>
+                        </div>
+                    </div>
+                    <div class="review_item flex swrap">
+                        <div><img src="/tien-ich/assets/images/user-avata-default.webp" alt="Icon"></div>
+                        <div>
+                            <div class="flex swrap">
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                                <div><i class="fa-solid fa-star"></i></div>
+                            </div>
+                            <div>Ngô Văn Lâu</div>
+                            <div>23/8/2022</div>
+                            <div>Dịch vụ tuyệt vời. Đặt vé nhanh chóng và nhân viên phục vụ nhiệt tình.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div>
+                        <hr>
+                        <div>Xem tất cả</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="icons">
+                <div><a href="javascript:;"><i class="fa-solid fa-phone"></i>Liên hệ</a></div>
+                <div><a href="javascript:;"><i class="fa-brands fa-facebook"></i>FaceBook</a></div>
+                <div><a href="javascript:;"><i class="fa-solid fa-bus-simple"></i>Tìm chuyến</a></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="go_to_top">
+                <div><i class="fa-solid fa-angles-up"></i></div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div><hr></div>
+            <div>
+                <ul class="flex space-bet ">
+                    <li>
+                        <h4>Về chúng tối</h4>
+                        <ul>
+                            <li><a href="#">Phần mềm đại lý</a></li>
+                            <li><a href="#">Giới Thiệu</a></li>
+                            <li><a href="#">Tuyển dụng</a></li>
+                            <li><a href="#">Tin tức</a></li>
+                            <li><a href="#">Liên hệ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Hỗ trợ</h4>
+                        <ul>
+                            <li><a href="#">Hướng dẫn thanh toán</a></li>
+                            <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                            <li><a href="#">Chính sách bảo mật thanh toán</a></li>
+                            <li><a href="#">Chính sách và quy trình giải quyết <br> tranh chấp, khiếu nại</a></li>
+                            <li><a href="#">Câu hỏi thường gặp</a></li>
+                            <li><a href="#">Tra cứu đơn hàng</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Chứng nhận</h4>
+                        <ul>
+                            <li><a href="#"><img src="assets/images/certificate0.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/certificate1.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/dangkybocongthuong.png" alt="Ảnh minh họa"></a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>Tải ứng dụng Wadering Bus</h4>
+                        <ul>
+                            <li><a href="#"><img src="assets/images/AP-icon.png" alt="Ảnh minh họa"></a></li>
+                            <li><a href="#"><img src="assets/images/GP-icon.png" alt="Ảnh minh họa"></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>Công ty Lữ hành Wandering Bus</div>
+            <div>Địa chỉ đăng ký kinh doanh: Nguyễn Kiệm, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</div>
+            <div>Địa chỉ: Nguyễn Kiệm, Quận Gò Vấp, Thành Phố Hồ Chí Minh, Việt Nam</div>
+            <div>Giấy chứng nhận ĐKKD số 0123456789 do Sở KH và ĐT TP. Hồ Chí Minh cấp lần đầu ngày 22/2/2022</div>
+            <div>Bản quyền &copy; 2022 thuộc về Wandering Bus</div>
+        </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
